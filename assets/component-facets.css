@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  padding-top: 1rem;
+  padding-top: 0;
 }
 
 .active-facets-mobile {
@@ -36,7 +36,14 @@
   display: flex;
   grid-column: 2;
   grid-row: 1;
-  padding-left: 2.5rem;
+}
+
+facet-filters-form.facets.small-hide {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+facet-filters-form.facets.facets-pill.small-hide {
+  grid-area: 2 / 1 / 3 / 3;
 }
 
 @media screen and (min-width: 990px) {
@@ -47,9 +54,8 @@
 
 .facet-filters__label {
   display: block;
-  color: rgba(var(--color-foreground), 0.85);
-  font-size: 1.4rem;
-  margin: 0 2rem 0 0;
+  text-decoration-line: underline;
+  margin: 0 ;
 }
 
 .facet-filters__summary {
@@ -72,6 +78,7 @@
 .facet-filters__field {
   align-items: center;
   display: flex;
+  flex-direction: row-reverse;
   flex-grow: 1;
   justify-content: flex-end;
 }
@@ -103,12 +110,18 @@
   background-color: transparent;
   border: 0;
   border-radius: 0;
-  font-size: 1.4rem;
+  color: var(--Black, #353941);
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 172%;
+  letter-spacing: .48px;
+  text-decoration: underline;
   height: auto;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
   margin: 0;
   padding-left: 0;
-  padding-right: 1.75rem;
+  padding-right: 0;
 }
 
 .facet-filters__sort + .icon-caret {
@@ -166,10 +179,7 @@
 }
 
 .facets__form {
-  display: grid;
-  gap: 0 3.5rem;
-  grid-template-columns: 1fr max-content max-content;
-  margin-bottom: 0.5rem;
+
 }
 
 .facets__wrapper {
@@ -652,6 +662,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 }
 
 .mobile-facets__wrapper {
+  height: 21px;
   margin-left: 0;
   display: flex;
 }
@@ -727,7 +738,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 .mobile-facets__open {
   text-align: left;
   width: 100%;
-  padding-top: 0.5rem;
+  padding-top: 0;
   padding-bottom: 0.5rem;
   display: flex;
   align-items: center;
@@ -744,6 +755,14 @@ a.active-facets__button.focused .active-facets__button-inner,
 }
 
 .mobile-facets__open-label {
+  color: var(--Black, #353941);
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 172%;
+  letter-spacing: 0.48px;
+  text-decoration-line: underline;
   transition: text-decoration var(--duration-short) ease;
 }
 
@@ -752,12 +771,8 @@ a.active-facets__button.focused .active-facets__button-inner,
   text-underline-offset: 0.3rem;
 }
 
-.mobile-facets__open > * + * {
-  margin-left: 1rem;
-}
-
 .mobile-facets__open svg {
-  width: 2rem;
+  display: none;
 }
 
 .mobile-facets__open line,

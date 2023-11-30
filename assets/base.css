@@ -71,6 +71,15 @@
   --shadow-visible: var(--media-shadow-visible);
 }
 
+@font-face {
+  font-family: 'Greyst';
+  src: url('Greyst-Regular.woff2') format('woff2'),
+      url('Greyst-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* base */
 
 .no-js:not(html) {
@@ -96,7 +105,7 @@ html.no-js .no-js-hidden {
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2.2rem;
 }
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
@@ -414,9 +423,13 @@ blockquote {
 .field__input,
 .form__label,
 .select__select {
-  font-size: 1.3rem;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
-  letter-spacing: 0.04rem;
+  color: var(--Black, #353941);
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 172%; /* 20.64px */
+  letter-spacing: 0.48px;
 }
 
 .color-foreground {
@@ -436,12 +449,6 @@ table:not([class]) td,
 table:not([class]) th {
   padding: 1em;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
-}
-
-@media screen and (max-width: 749px) {
-  .small-hide {
-    display: none !important;
-  }
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
@@ -894,7 +901,8 @@ summary::-webkit-details-marker {
   padding: 0;
   list-style: none;
   column-gap: var(--grid-mobile-horizontal-spacing);
-  row-gap: var(--grid-mobile-vertical-spacing);
+  row-gap: 20px;
+  margin-top: 20px;
 }
 
 @media screen and (min-width: 750px) {
@@ -1135,6 +1143,7 @@ summary::-webkit-details-marker {
   left: 0;
   height: 100%;
   width: 100%;
+  padding: 26px 23px;
 }
 
 .media > img {
@@ -2473,8 +2482,13 @@ product-info .loading__spinner:not(.hidden) ~ *,
 }
 
 .header__heading-link .h2 {
-  line-height: 1;
-  color: rgba(var(--color-foreground), 0.75);
+  color: var(--Black, #353941);
+  text-align: center;
+  font-family: Greyst;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; 
 }
 
 .header__heading-logo {
@@ -2932,18 +2946,20 @@ details-disclosure > details {
 }
 
 .badge {
-  border: 1px solid transparent;
-  border-radius: var(--badge-corner-radius);
   display: inline-block;
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
   line-height: 1;
-  padding: 0.5rem 1.3rem 0.6rem 1.3rem;
   text-align: center;
-  background-color: rgb(var(--color-badge-background));
-  border-color: rgba(var(--color-badge-border), var(--alpha-badge-border));
-  color: rgb(var(--color-badge-foreground));
   word-break: break-word;
+  border-radius: 99px;
+  background: #FFF;
+  color: #121212;
+  font-family: Helvetica;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.39px;
+  padding: 4px 12px;
 }
 
 .gradient {

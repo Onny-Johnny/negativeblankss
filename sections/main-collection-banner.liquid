@@ -4,7 +4,7 @@
 {%- style -%}
   @media screen and (max-width: 749px) {
     .collection-hero--with-image .collection-hero__inner {
-      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+      padding-bottom: calc({{settings.media_shadow_vertical_offset | at_least: 0}}px + 2rem);
     }
   }
 {%- endstyle -%}
@@ -45,6 +45,39 @@
   </div>
 </div>
 
+{%- if collection.metafields.collection.meet_our_artists -%}
+  <div class="meet-artists-section">
+    <h3 class="title">{{ section.settings.title }}</h3>
+    <div class="swiper-container meet-artists-container">
+      <div class="swiper-wrapper meet-artists-wrapper">
+        {%- for artist in collection.metafields.collection.meet_our_artists.value -%}
+          <a href="{{ artist.url }}" class="swiper-slide meet-artists-slide">
+            <img
+              class="artist-image"
+              src="{{ artist.metafields.collection.artist.value.image |  image_url: width: 65  }}"
+            >
+            <div class="artist-name">{{ artist.metafields.collection.artist.value.name }}</div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const artistsSlider = new Swiper('.meet-artists-container', {
+    slidesPerView: 'auto',
+    spaceBetween: 18,
+  });
+</script>
+
 {% schema %}
 {
   "name": "t:sections.main-collection-banner.name",
@@ -72,6 +105,12 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "background-1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Artists title",
+      "default": "Meet our artists"
     }
   ]
 }

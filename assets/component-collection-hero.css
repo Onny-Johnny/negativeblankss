@@ -36,14 +36,25 @@
 }
 
 .collection-hero__title {
-  margin: 2.5rem 0;
+  color: var(--Black, #353941);
+  font-family: Greyst;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 2rem 0;
 }
 
 .collection-hero__title + .collection-hero__description {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.6rem;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
+  color: var(--Black, #353941);
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.168px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -95,4 +106,64 @@
     margin-left: 3rem;
     min-height: 20rem;
   }
+}
+
+.meet-artists-section {
+  max-width: 1140px;
+  width: auto;
+  overflow: hidden;
+  border-top: 0.5px solid #B3B2B2;
+  border-bottom: 0.5px solid #B3B2B2;
+  margin: 20px auto 0;
+}
+
+.meet-artists-container {
+  margin-bottom: 20px;
+}
+
+.meet-artists-section .title {
+  color: var(--Black, #353941);
+  font-family: Greyst;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 172%;
+  letter-spacing: 0.56px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.meet-artists-slide {
+  width: 72px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.meet-artists-slide:first-child {
+  margin-left: 20px;
+}
+
+.artist-image {
+  width: 65px;
+  height: 65px;
+  display: block;
+  border-radius: 50%;
+  border-radius: 96px;
+  border: 0.5px solid var(--Grey, #8E96A4);
+  margin: 0 auto;
+}
+
+.artist-name {
+  color: var(--Black, #353941);
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 172%;
+  letter-spacing: 0.48px;
+  margin-top: 4px;
 }
